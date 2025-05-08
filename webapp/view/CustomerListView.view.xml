@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:layout="sap.ui.layout"
+  xmlns:form="sap.ui.layout.form"
+  xmlns:table="sap.ui.table"
+  xmlns:core="sap.ui.core"
+  xmlns:richtexteditor="sap.ui.richtexteditor"
+  xmlns:viz="sap.viz.ui5"
+  controllerName="preview.app.controller.CustomerListView"
+  displayBlock="true">
+  <App id="app">
+    <pages>
+      <Page title="CustomerListView" enableScrolling="true">
+        <content>
+          <Title id="title_6ihq09jm" text="Customer List" />
+          <layout:Grid id="gridLayoutTop" width="100%">
+            <layout:HorizontalLayout id="rowLayoutFilters">
+              <m:Text id="textViewViewLabel" text="View:" />
+              <Select id="dropDownView" />
+              <m:Button id="buttonPrint" text="Print Version" press="onOnPrint" />
+              <m:Button id="buttonExport" text="Export" press="onOnExport" />
+            </layout:HorizontalLayout>
+            <layout:HorizontalLayout id="rowLayoutTable">
+              <table:Table id="customerTable">
+                <table:Column id="columnCustomer" label="Customer" headerText="Customer">
+                  <table:template>
+                    <Text text="{name}" />
+                  </table:template>
+                </table:Column>
+                <table:Column id="columnCty" label="Cty" headerText="Cty">
+                  <table:template>
+                    <Text text="{name}" />
+                  </table:template>
+                </table:Column>
+                <table:Column id="columnName1" label="Name 1" headerText="Name 1">
+                  <table:template>
+                    <Text text="{name}" />
+                  </table:template>
+                </table:Column>
+                <table:Column id="columnName2" label="Name 2" headerText="Name 2">
+                  <table:template>
+                    <Text text="{name}" />
+                  </table:template>
+                </table:Column>
+                <table:Column id="columnCity" label="City" headerText="City">
+                  <table:template>
+                    <Text text="{name}" />
+                  </table:template>
+                </table:Column>
+                <table:Column id="columnPostalCode" label="PostalCode" headerText="PostalCode">
+                  <table:template>
+                    <Text text="{name}" />
+                  </table:template>
+                </table:Column>
+                <table:Column id="columnRg" label="Rg" headerText="Rg">
+                  <table:template>
+                    <Text text="{name}" />
+                  </table:template>
+                </table:Column>
+                <table:Column id="columnSearchTerm" label="SearchTerm" headerText="SearchTerm">
+                  <table:template>
+                    <Text text="{name}" />
+                  </table:template>
+                </table:Column>
+                <table:Column id="columnStreet" label="Street" headerText="Street">
+                  <table:template>
+                    <Text text="{name}" />
+                  </table:template>
+                </table:Column>
+                <table:rows>
+                  <table:RowBinding path="/" />
+                </table:rows>
+              </table:Table>
+            </layout:HorizontalLayout>
+          </layout:Grid>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

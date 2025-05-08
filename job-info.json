@@ -1,0 +1,182 @@
+{
+  "jobId": "xd-1746679561454",
+  "status": "completed",
+  "createdAt": "2025-05-08T04:46:01.993Z",
+  "exampleFilename": "alv_table_example.xml",
+  "outputDir": "/tmp/webdynpro-converter/xd-1746679561454/output",
+  "result": {
+    "success": true,
+    "message": "WebDynpro successfully converted to SAPUI5",
+    "files": [
+      "webapp/view/CustomerListView.view.xml",
+      "webapp/controller/CustomerListView.controller.js",
+      "webapp/manifest.json",
+      "webapp/i18n/i18n.properties",
+      "webapp/Component.js",
+      "webapp/index.js",
+      "webapp/index.html",
+      "index.html",
+      "fullscreen.html",
+      "metadata.json",
+      "original.xml"
+    ],
+    "structure": {
+      "ui5Components": [
+        {
+          "type": "sap.m.Title",
+          "id": "title_6ihq09jm",
+          "properties": {
+            "text": "Customer List"
+          },
+          "content": []
+        },
+        {
+          "type": "sap.ui.layout.Grid",
+          "id": "gridLayoutTop",
+          "properties": {
+            "width": "100%"
+          },
+          "content": [
+            {
+              "type": "sap.ui.layout.HorizontalLayout",
+              "id": "rowLayoutFilters",
+              "properties": {},
+              "content": [
+                {
+                  "type": "sap.m.Text",
+                  "id": "textViewViewLabel",
+                  "properties": {
+                    "text": "View:"
+                  },
+                  "content": []
+                },
+                {
+                  "type": "sap.m.Select",
+                  "id": "dropDownView",
+                  "properties": {},
+                  "content": []
+                },
+                {
+                  "type": "sap.m.Button",
+                  "id": "buttonPrint",
+                  "properties": {
+                    "text": "Print Version",
+                    "press": "onOnPrint"
+                  },
+                  "content": []
+                },
+                {
+                  "type": "sap.m.Button",
+                  "id": "buttonExport",
+                  "properties": {
+                    "text": "Export",
+                    "press": "onOnExport"
+                  },
+                  "content": []
+                }
+              ]
+            },
+            {
+              "type": "sap.ui.layout.HorizontalLayout",
+              "id": "rowLayoutTable",
+              "properties": {},
+              "content": [
+                {
+                  "type": "sap.ui.table.Table",
+                  "id": "customerTable",
+                  "properties": {},
+                  "content": [],
+                  "columns": [
+                    {
+                      "type": "sap.ui.table.Column",
+                      "id": "columnCustomer",
+                      "properties": {
+                        "label": "Customer",
+                        "headerText": "Customer"
+                      }
+                    },
+                    {
+                      "type": "sap.ui.table.Column",
+                      "id": "columnCty",
+                      "properties": {
+                        "label": "Cty",
+                        "headerText": "Cty"
+                      }
+                    },
+                    {
+                      "type": "sap.ui.table.Column",
+                      "id": "columnName1",
+                      "properties": {
+                        "label": "Name 1",
+                        "headerText": "Name 1"
+                      }
+                    },
+                    {
+                      "type": "sap.ui.table.Column",
+                      "id": "columnName2",
+                      "properties": {
+                        "label": "Name 2",
+                        "headerText": "Name 2"
+                      }
+                    },
+                    {
+                      "type": "sap.ui.table.Column",
+                      "id": "columnCity",
+                      "properties": {
+                        "label": "City",
+                        "headerText": "City"
+                      }
+                    },
+                    {
+                      "type": "sap.ui.table.Column",
+                      "id": "columnPostalCode",
+                      "properties": {
+                        "label": "PostalCode",
+                        "headerText": "PostalCode"
+                      }
+                    },
+                    {
+                      "type": "sap.ui.table.Column",
+                      "id": "columnRg",
+                      "properties": {
+                        "label": "Rg",
+                        "headerText": "Rg"
+                      }
+                    },
+                    {
+                      "type": "sap.ui.table.Column",
+                      "id": "columnSearchTerm",
+                      "properties": {
+                        "label": "SearchTerm",
+                        "headerText": "SearchTerm"
+                      }
+                    },
+                    {
+                      "type": "sap.ui.table.Column",
+                      "id": "columnStreet",
+                      "properties": {
+                        "label": "Street",
+                        "headerText": "Street"
+                      }
+                    }
+                  ],
+                  "items": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "success": true,
+      "appId": "converted.customerlistview",
+      "viewName": "CustomerListView",
+      "metadata": {
+        "originalFormat": "WebDynpro",
+        "conversionDate": "2025-05-08T04:46:01.974Z"
+      }
+    },
+    "jobId": "xd-1746679561454",
+    "outputPath": "/tmp/webdynpro-converter/xd-1746679561454/output",
+    "originalXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<WebDynpro xmlns=\"http://www.sap.com/wd/webdynpro\">\n  <View name=\"CustomerListView\">\n    <Title>Customer List</Title>\n    <GridLayout id=\"gridLayoutTop\" layoutData=\"{}\" width=\"100%\">\n      <RowLayout id=\"rowLayoutFilters\" layoutData=\"{}\">\n        <TextView id=\"textViewViewLabel\" text=\"View:\" layoutData=\"{}\"/>\n        <DropDownByKey id=\"dropDownView\" dataSource=\"{/viewOptions}\" selectedKey=\"{/selectedView}\" layoutData=\"{}\"/>\n        <Button id=\"buttonPrint\" text=\"Print Version\" layoutData=\"{}\" onAction=\"onPrint\"/>\n        <Button id=\"buttonExport\" text=\"Export\" layoutData=\"{}\" onAction=\"onExport\"/>\n      </RowLayout>\n      <RowLayout id=\"rowLayoutTable\" layoutData=\"{}\">\n        <Table id=\"customerTable\" dataSource=\"{/customerList}\" selectionMode=\"SINGLE\" layoutData=\"{}\" selectionChangeEvent=\"onSelectRow\">\n          <TableColumn id=\"columnCustomer\" sortable=\"true\" filterable=\"true\" columnIndex=\"0\">\n            <TextView id=\"textViewCustomerHeader\" text=\"Customer\" design=\"STANDARD\"/>\n            <TextView id=\"textViewCustomerValue\" text=\"{/customerID}\" design=\"STANDARD\"/>\n          </TableColumn>\n          <TableColumn id=\"columnCty\" sortable=\"true\" filterable=\"true\" columnIndex=\"1\">\n            <TextView id=\"textViewCtyHeader\" text=\"Cty\" design=\"STANDARD\"/>\n            <TextView id=\"textViewCtyValue\" text=\"{/cty}\" design=\"STANDARD\"/>\n          </TableColumn>\n          <TableColumn id=\"columnName1\" sortable=\"true\" filterable=\"true\" columnIndex=\"2\">\n            <TextView id=\"textViewName1Header\" text=\"Name 1\" design=\"STANDARD\"/>\n            <TextView id=\"textViewName1Value\" text=\"{/name1}\" design=\"STANDARD\"/>\n          </TableColumn>\n          <TableColumn id=\"columnName2\" sortable=\"true\" filterable=\"true\" columnIndex=\"3\">\n            <TextView id=\"textViewName2Header\" text=\"Name 2\" design=\"STANDARD\"/>\n            <TextView id=\"textViewName2Value\" text=\"{/name2}\" design=\"STANDARD\"/>\n          </TableColumn>\n          <TableColumn id=\"columnCity\" sortable=\"true\" filterable=\"true\" columnIndex=\"4\">\n            <TextView id=\"textViewCityHeader\" text=\"City\" design=\"STANDARD\"/>\n            <TextView id=\"textViewCityValue\" text=\"{/city}\" design=\"STANDARD\"/>\n          </TableColumn>\n          <TableColumn id=\"columnPostalCode\" sortable=\"true\" filterable=\"true\" columnIndex=\"5\">\n            <TextView id=\"textViewPostalCodeHeader\" text=\"PostalCode\" design=\"STANDARD\"/>\n            <TextView id=\"textViewPostalCodeValue\" text=\"{/postalCode}\" design=\"STANDARD\"/>\n          </TableColumn>\n          <TableColumn id=\"columnRg\" sortable=\"true\" filterable=\"true\" columnIndex=\"6\">\n            <TextView id=\"textViewRgHeader\" text=\"Rg\" design=\"STANDARD\"/>\n            <TextView id=\"textViewRgValue\" text=\"{/rg}\" design=\"STANDARD\"/>\n          </TableColumn>\n          <TableColumn id=\"columnSearchTerm\" sortable=\"true\" filterable=\"true\" columnIndex=\"7\">\n            <TextView id=\"textViewSearchTermHeader\" text=\"SearchTerm\" design=\"STANDARD\"/>\n            <TextView id=\"textViewSearchTermValue\" text=\"{/searchTerm}\" design=\"STANDARD\"/>\n          </TableColumn>\n          <TableColumn id=\"columnStreet\" sortable=\"true\" filterable=\"true\" columnIndex=\"8\">\n            <TextView id=\"textViewStreetHeader\" text=\"Street\" design=\"STANDARD\"/>\n            <TextView id=\"textViewStreetValue\" text=\"{/street}\" design=\"STANDARD\"/>\n          </TableColumn>\n        </Table>\n      </RowLayout>\n    </GridLayout>\n  </View>\n  <Controller name=\"CustomerListController\">\n    <Method name=\"onPrint\"/>\n    <Method name=\"onExport\"/>\n    <Method name=\"onSelectRow\"/>\n    <Method name=\"wdDoInit\"/>\n  </Controller>\n</WebDynpro>"
+  }
+}

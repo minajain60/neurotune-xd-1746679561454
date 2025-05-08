@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebDynpro xmlns="http://www.sap.com/wd/webdynpro">
+  <View name="CustomerListView">
+    <Title>Customer List</Title>
+    <GridLayout id="gridLayoutTop" layoutData="{}" width="100%">
+      <RowLayout id="rowLayoutFilters" layoutData="{}">
+        <TextView id="textViewViewLabel" text="View:" layoutData="{}"/>
+        <DropDownByKey id="dropDownView" dataSource="{/viewOptions}" selectedKey="{/selectedView}" layoutData="{}"/>
+        <Button id="buttonPrint" text="Print Version" layoutData="{}" onAction="onPrint"/>
+        <Button id="buttonExport" text="Export" layoutData="{}" onAction="onExport"/>
+      </RowLayout>
+      <RowLayout id="rowLayoutTable" layoutData="{}">
+        <Table id="customerTable" dataSource="{/customerList}" selectionMode="SINGLE" layoutData="{}" selectionChangeEvent="onSelectRow">
+          <TableColumn id="columnCustomer" sortable="true" filterable="true" columnIndex="0">
+            <TextView id="textViewCustomerHeader" text="Customer" design="STANDARD"/>
+            <TextView id="textViewCustomerValue" text="{/customerID}" design="STANDARD"/>
+          </TableColumn>
+          <TableColumn id="columnCty" sortable="true" filterable="true" columnIndex="1">
+            <TextView id="textViewCtyHeader" text="Cty" design="STANDARD"/>
+            <TextView id="textViewCtyValue" text="{/cty}" design="STANDARD"/>
+          </TableColumn>
+          <TableColumn id="columnName1" sortable="true" filterable="true" columnIndex="2">
+            <TextView id="textViewName1Header" text="Name 1" design="STANDARD"/>
+            <TextView id="textViewName1Value" text="{/name1}" design="STANDARD"/>
+          </TableColumn>
+          <TableColumn id="columnName2" sortable="true" filterable="true" columnIndex="3">
+            <TextView id="textViewName2Header" text="Name 2" design="STANDARD"/>
+            <TextView id="textViewName2Value" text="{/name2}" design="STANDARD"/>
+          </TableColumn>
+          <TableColumn id="columnCity" sortable="true" filterable="true" columnIndex="4">
+            <TextView id="textViewCityHeader" text="City" design="STANDARD"/>
+            <TextView id="textViewCityValue" text="{/city}" design="STANDARD"/>
+          </TableColumn>
+          <TableColumn id="columnPostalCode" sortable="true" filterable="true" columnIndex="5">
+            <TextView id="textViewPostalCodeHeader" text="PostalCode" design="STANDARD"/>
+            <TextView id="textViewPostalCodeValue" text="{/postalCode}" design="STANDARD"/>
+          </TableColumn>
+          <TableColumn id="columnRg" sortable="true" filterable="true" columnIndex="6">
+            <TextView id="textViewRgHeader" text="Rg" design="STANDARD"/>
+            <TextView id="textViewRgValue" text="{/rg}" design="STANDARD"/>
+          </TableColumn>
+          <TableColumn id="columnSearchTerm" sortable="true" filterable="true" columnIndex="7">
+            <TextView id="textViewSearchTermHeader" text="SearchTerm" design="STANDARD"/>
+            <TextView id="textViewSearchTermValue" text="{/searchTerm}" design="STANDARD"/>
+          </TableColumn>
+          <TableColumn id="columnStreet" sortable="true" filterable="true" columnIndex="8">
+            <TextView id="textViewStreetHeader" text="Street" design="STANDARD"/>
+            <TextView id="textViewStreetValue" text="{/street}" design="STANDARD"/>
+          </TableColumn>
+        </Table>
+      </RowLayout>
+    </GridLayout>
+  </View>
+  <Controller name="CustomerListController">
+    <Method name="onPrint"/>
+    <Method name="onExport"/>
+    <Method name="onSelectRow"/>
+    <Method name="wdDoInit"/>
+  </Controller>
+</WebDynpro>
